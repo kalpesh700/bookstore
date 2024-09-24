@@ -1,14 +1,28 @@
-import React from 'react';
-import List from "../../public/list.json";
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from './cards';
 
-function freeBook() {
+function FreeBook() {
+  const [book, setBook] = useState([]);
 
-  // Correct the filter function
-  const filterData = List.filter((data) => data.category === "free");
+  useEffect(() => {
+    const getBook = async () => {
+      try {
+        const response = await axios.get("http://localhost:1616/book");
+        console.log(response.data);
+        setBook(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBook();
+  }, []);
+
+  // Correct the filter function to filter based on fetched data
+  const filterData = book.filter((data) => data.category === "free");
 
   var settings = {
     dots: true,
@@ -24,25 +38,25 @@ function freeBook() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -67,4 +81,4 @@ function freeBook() {
   );
 }
 
-export default freeBook;
+export default FreeBook;
