@@ -7,10 +7,7 @@ import App from './App.jsx'; // Import your App component
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-    <div >
-    <App />
-    </div>
-     
+      <App /> {/* No need for an extra div here */}
     </BrowserRouter>
   </StrictMode>
 );

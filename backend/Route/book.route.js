@@ -1,8 +1,9 @@
 const express = require('express');
-const router = express.Router();
-const { getBook } = require('../controller/book.controller'); // Ensure the correct path
+const { getBook, getBookByEnglishTitle } = require('../controller/book.controller');
 
-// Define routes
-router.get("/", getBook);
+const router = express.Router();
+
+router.get('/', getBook); // Get all books
+router.get('/detail/:title_en', getBookByEnglishTitle); // Get book by English title
 
 module.exports = router;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from 'axios'; // Import axios
 
 function Login() {
   const {
@@ -10,28 +11,35 @@ function Login() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-  };
+    const userInfo = {
+      email: data.email,
+      password: data.password,
+    };
 
-  // Function to open the modal
-  const openModal = () => {
-    document.getElementById('my_modal_3').showModal();
-  };
+    axios.post("http://localhost:1616/users/login", userInfo)
+      .then((res) => {
+        console.log(res.data); // Log the response data for debugging
 
-  // Function to close the modal
-  const closeModal = () => {
-    document.getElementById('my_modal_3').close();
+        if (res.data.message === "User logged in successfully") {
+          alert("Login successful! Welcome back! 🎉");
+          localStorage.setItem("Users", JSON.stringify(res.data.user)); // Store user info as a string
+        } else {
+          alert("Invalid login credentials. Please try again. 😕");
+        }
+      })
+      .catch((err) => {
+        console.error("Login error:", err.response ? err.response.data : err.message);
+        alert("An error occurred. Please try again later. 😕");
+      });
   };
 
   return (
     <div>
-      
-     
-
+      {/* Modal for Login */}
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           {/* Close button */}
-          <button onClick={closeModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button onClick={() => document.getElementById('my_modal_3').close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 
           <h3 className="font-bold text-lg">Login</h3>
 
@@ -56,10 +64,10 @@ function Login() {
                 type="text"
                 className="grow"
                 placeholder="Email"
-                {...register('Email', { required: 'Email is required' })}
+                {...register('email', { required: 'Email is required' })} // Ensure the field is registered correctly
               />
             </label>
-            {errors.Email && <span className="text-red-500">{errors.Email.message}</span>}
+            {errors.email && <span className="text-red-500">{errors.email.message}</span>}
 
             {/* Password */}
             <label className="input input-bordered flex items-center gap-2">
@@ -79,7 +87,7 @@ function Login() {
                 type="password"
                 className="grow"
                 placeholder="Password"
-                {...register('password', { required: 'Password is required' })}
+                {...register('password', { required: 'Password is required' })} // Ensure the field is registered correctly
               />
             </label>
             {errors.password && <span className="text-red-500">{errors.password.message}</span>}

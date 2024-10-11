@@ -1,11 +1,23 @@
 {
   "name": "bookstore",
   "version": "1.0.0",
-  "description": "book store",
+  "description": "Frontend for the bookstore application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",                    
+    "build": "vite build",            
+    "start": "vite preview"         
   },
-  "author": "kalpesh koli",
-  "license": "ISC"
+  "author": "Kalpesh Koli",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.0.0",              
+    "react-dom": "^18.0.0",           
+    "daisyui": "^4.12.10"            
+  
+  },
+  "devDependencies": {
+    "vite": "^5.4.3",                 
+    "react-refresh": "^0.10.0"       
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from 'axios'; // Import axios
 
 function Signup() {
   const {
@@ -10,14 +11,34 @@ function Signup() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+
+    axios.post("http://localhost:1616/users/signup", userInfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.alreadyExists) {
+          alert("Oops, looks like you are already signed up! Try logging in. 😎");
+        } else {
+          alert("Signup successful! Welcome aboard! 🎉");
+          localStorage.setItem("Users", JSON.stringify(res.data.user)); // Store as a string
+        }
+        localStorage.setItem("Users",res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Signup failed. Something went wrong. 😕");
+      });
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* Username */}
+          {/* Full Name */}
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,11 +53,11 @@ function Signup() {
             <input
               type="text"
               className="grow"
-              placeholder="Username"
-              {...register('username', { required: 'Username is required' })}
+              placeholder="Full Name"
+              {...register('fullname', { required: 'Full Name is required' })}
             />
           </label>
-          {errors.username && <span className="text-red-500">{errors.username.message}</span>}
+          {errors.fullname && <span className="text-red-500">{errors.fullname.message}</span>}
 
           {/* Email */}
           <label className="input input-bordered flex items-center gap-2">

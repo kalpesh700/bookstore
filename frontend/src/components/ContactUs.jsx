@@ -13,15 +13,15 @@ function ContactUs() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="w-full max-w-lg p-8 bg-white shadow-lg rounded-lg">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100"> {/* Set background color */}
+      <div className="w-full max-w-lg p-8 bg-white shadow-xl rounded-lg"> {/* Use shadow-xl for a deeper shadow */}
         <h2 className="text-2xl font-semibold text-center mb-6">Contact Us</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name */}
           <label className="flex flex-col">
             <input
               type="text"
-              className="input input-bordered mt-1"
+              className="input input-bordered mt-1 focus:outline-none focus:ring focus:ring-blue-300" // Added focus styles
               placeholder="Your name"
               {...register('name', { required: 'Name is required' })}
             />
@@ -29,10 +29,10 @@ function ContactUs() {
           {errors.name && <span className="text-red-500">{errors.name.message}</span>}
 
           {/* Email */}
-          <label className=" flex flex-col">
+          <label className="flex flex-col">
             <input
               type="text"
-              className="input input-bordered mt-1"
+              className="input input-bordered mt-1 focus:outline-none focus:ring focus:ring-blue-300" // Added focus styles
               placeholder="Your email"
               {...register('email', {
                 required: 'Email is required',
@@ -46,9 +46,9 @@ function ContactUs() {
           {errors.email && <span className="text-red-500">{errors.email.message}</span>}
 
           {/* Message */}
-          <label className=" flex flex-col">
+          <label className="flex flex-col">
             <textarea
-              className="textarea textarea-bordered mt-1"
+              className="textarea textarea-bordered mt-1 focus:outline-none focus:ring focus:ring-blue-300" // Added focus styles
               placeholder="Your message"
               rows="4"
               {...register('message', { required: 'Message is required' })}
