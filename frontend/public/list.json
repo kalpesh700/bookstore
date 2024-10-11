@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "name": "Story Book",
+        "title": "A Journey Through Tales",
+        "price": 0,
+        "category": "free",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 2,
+        "name": "Drama Book",
+        "title": "Theatrical Performances",
+        "price": 0,
+        "category": "free",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 3,
+        "name": "Comedy Book",
+        "title": "Laugh Out Loud",
+        "price": 0,
+        "category": "free",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 4,
+        "name": "Adventure Book",
+        "title": "Epic Journeys",
+        "price": 10,
+        "category": "adventure",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 5,
+        "name": "Cookbook",
+        "title": "Delicious Recipes",
+        "price": 15,
+        "category": "food",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 6,
+        "name": "Science Fiction Book",
+        "title": "Future Worlds",
+        "price": 20,
+        "category": "science fiction",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 7,
+        "name": "Historical Book",
+        "title": "Ancient Times",
+        "price": 25,
+        "category": "history",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 8,
+        "name": "Biology Book",
+        "title": "Life Sciences",
+        "price": 30,
+        "category": "education",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 9,
+        "name": "Mystery Book",
+        "title": "Solve the Crime",
+        "price": 18,
+        "category": "mystery",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 10,
+        "name": "Romance Novel",
+        "title": "Love Stories",
+        "price": 22,
+        "category": "romance",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 11,
+        "name": "Poetry Book",
+        "title": "Verses and Rhymes",
+        "price": 12,
+        "category": "poetry",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    },
+    {
+        "id": 12,
+        "name": "Graphic Novel",
+        "title": "Illustrated Stories",
+        "price": 35,
+        "category": "graphic novel",
+        "image": "https://media.gettyimages.com/id/157482029/photo/stack-of-books.jpg?s=612x612&w=gi&k=20&c=_Yaofm8sZLZkKs1eMkv-zhk8K4k5u0g0fJuQrReWfdQ="
+    }
+]

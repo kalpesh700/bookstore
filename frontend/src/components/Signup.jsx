@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+<<<<<<< HEAD
 import axios from 'axios'; // Import axios
+=======
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
 
 function Signup() {
   const {
@@ -11,6 +14,7 @@ function Signup() {
   } = useForm();
 
   const onSubmit = (data) => {
+<<<<<<< HEAD
     const userInfo = {
       fullname: data.fullname,
       email: data.email,
@@ -32,13 +36,20 @@ function Signup() {
         console.error(err);
         alert("Signup failed. Something went wrong. 😕");
       });
+=======
+    console.log(data);
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+<<<<<<< HEAD
           {/* Full Name */}
+=======
+          {/* Username */}
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
           <label className="input input-bordered flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,11 +64,19 @@ function Signup() {
             <input
               type="text"
               className="grow"
+<<<<<<< HEAD
               placeholder="Full Name"
               {...register('fullname', { required: 'Full Name is required' })}
             />
           </label>
           {errors.fullname && <span className="text-red-500">{errors.fullname.message}</span>}
+=======
+              placeholder="Username"
+              {...register('username', { required: 'Username is required' })}
+            />
+          </label>
+          {errors.username && <span className="text-red-500">{errors.username.message}</span>}
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
 
           {/* Email */}
           <label className="input input-bordered flex items-center gap-2">

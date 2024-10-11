@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+<<<<<<< HEAD
 import axios from 'axios'; // Import axios
+=======
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
 
 function Login() {
   const {
@@ -11,6 +14,7 @@ function Login() {
   } = useForm();
 
   const onSubmit = (data) => {
+<<<<<<< HEAD
     const userInfo = {
       email: data.email,
       password: data.password,
@@ -31,15 +35,38 @@ function Login() {
         console.error("Login error:", err.response ? err.response.data : err.message);
         alert("An error occurred. Please try again later. 😕");
       });
+=======
+    console.log(data);
+  };
+
+  // Function to open the modal
+  const openModal = () => {
+    document.getElementById('my_modal_3').showModal();
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    document.getElementById('my_modal_3').close();
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
   };
 
   return (
     <div>
+<<<<<<< HEAD
       {/* Modal for Login */}
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           {/* Close button */}
           <button onClick={() => document.getElementById('my_modal_3').close()} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+=======
+      
+     
+
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box">
+          {/* Close button */}
+          <button onClick={closeModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
 
           <h3 className="font-bold text-lg">Login</h3>
 
@@ -64,10 +91,17 @@ function Login() {
                 type="text"
                 className="grow"
                 placeholder="Email"
+<<<<<<< HEAD
                 {...register('email', { required: 'Email is required' })} // Ensure the field is registered correctly
               />
             </label>
             {errors.email && <span className="text-red-500">{errors.email.message}</span>}
+=======
+                {...register('Email', { required: 'Email is required' })}
+              />
+            </label>
+            {errors.Email && <span className="text-red-500">{errors.Email.message}</span>}
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
 
             {/* Password */}
             <label className="input input-bordered flex items-center gap-2">
@@ -87,7 +121,11 @@ function Login() {
                 type="password"
                 className="grow"
                 placeholder="Password"
+<<<<<<< HEAD
                 {...register('password', { required: 'Password is required' })} // Ensure the field is registered correctly
+=======
+                {...register('password', { required: 'Password is required' })}
+>>>>>>> a7cea7e906f9d0493739c442fcd8555b17dfb9ed
               />
             </label>
             {errors.password && <span className="text-red-500">{errors.password.message}</span>}
